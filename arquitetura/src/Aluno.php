@@ -9,8 +9,24 @@ class Aluno
   private Email $email;
   private array $telefones;
 
-  public function adicionarTelefone(string $ddd, string $numero)
+  public static function comCpfNomeEEmail(string $cpf, string $nome, string $email): self
+  {
+    return new Aluno(
+      new CPF($cpf),
+      $nome,
+      new Email($email)
+    );
+  }
+
+  public function __construct(CPF $cpf, string $nome, Email $email) {
+    $this->cpf = $cpf;
+    $this->nome = $nome;
+    $this->email = $email;
+  }
+
+  public function adicionarTelefone(string $ddd, string $numero): self
   {
     $this->telefones[] = new Telefone($ddd, $numero);
+    return $this;
   }
 }
