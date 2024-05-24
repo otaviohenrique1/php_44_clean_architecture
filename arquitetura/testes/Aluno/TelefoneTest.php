@@ -2,7 +2,7 @@
 
 namespace Alura\Arquitetura\Testes\Aluno;
 
-use Alura\Arquitetura\Aluno\Telefone;
+use Alura\Arquitetura\Dominio\Aluno\Telefone;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
