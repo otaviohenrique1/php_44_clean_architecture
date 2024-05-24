@@ -5,6 +5,11 @@
             "Alura\\Arquitetura\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Alura\\Arquitetura\\Testes\\": "testes/"
+        }
+    },
     "authors": [
         {
             "name": "Otavio Henrique de Lima e Silva",
