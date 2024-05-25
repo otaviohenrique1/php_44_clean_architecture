@@ -1,6 +1,7 @@
 <?php
 
 namespace Alura\Arquitetura\Dominio\Aluno;
+
 use InvalidArgumentException;
 
 class Telefone
@@ -8,7 +9,8 @@ class Telefone
   private string $ddd;
   private string $numero;
 
-  public function __construct(string $ddd, string $numero) {
+  public function __construct(string $ddd, string $numero)
+  {
     $this->setDDD($ddd);
     $this->setNumero($numero);
   }
@@ -18,7 +20,7 @@ class Telefone
     if (preg_match('/\d{2}/', $ddd) !== 1) {
       throw new InvalidArgumentException('DDD inválido');
     }
-    
+
     $this->ddd = $ddd;
   }
 
@@ -29,6 +31,16 @@ class Telefone
     }
 
     $this->numero = $numero;
+  }
+
+  public function ddd(): string
+  {
+    return $this->ddd;
+  }
+
+  public function numero(): string
+  {
+    return $this->numero;
   }
 
   public function __toString(): string
