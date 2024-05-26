@@ -109,4 +109,9 @@ class RepositorioDeAlunoComPdo implements RepositorioDeAluno
 
     return array_values($alunos);
   }
+
+  public function atualiza(Aluno $aluno): void
+  {
+    /* Arrumar */
+  }
 }

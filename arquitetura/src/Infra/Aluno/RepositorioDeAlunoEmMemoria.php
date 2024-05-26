@@ -16,6 +16,16 @@ class RepositorioDeAlunoEmMemoria implements RepositorioDeAluno
   {
     $this->alunos[] = $aluno;
   }
+
+  public function atualiza(Aluno $aluno): void
+  {
+    /* Arrumar */
+    $index = array_search($aluno->cpf(), $this->alunos);
+    array_replace($this->alunos, [
+      $index => $aluno
+    ]);
+  }
+
   public function buscarPorCpf(CPF $cpf): Aluno
   {
     $alunoFiltrados = array_filter(
